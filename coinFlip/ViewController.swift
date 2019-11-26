@@ -4,7 +4,7 @@
 //
 //  Created by Leads Computer on 11/25/19.
 //
-
+// tuitorial link ->https://medium.com/@chantil/animate-serial-images-in-uiimageview-using-swift-39f249b25453
 import UIKit
 
 class ViewController: UIViewController {
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         // for 5 images
         imageView.animationImages = [self.img1, self.img2 , self.img3, self.img4, self.img5]
-        imageView.animationDuration = 0.5
+        imageView.animationDuration = 0.3
         imageView.animationRepeatCount = 2
         imageView.startAnimating()
         let random = arc4random_uniform(2)
