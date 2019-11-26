@@ -9,7 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
-
+    
+    
+    let img1 = UIImage(named: "1")!
+    let img2 = UIImage(named: "2")!
+    let img3 = UIImage(named: "3")!
+    let img4 = UIImage(named: "4")!
+    let img5 = UIImage(named: "5")!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,8 +26,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func filpTheCoin(_ sender: UIButton) {
+        
 //        animate()
         imageView.isHidden = false
+        
+        
+        // for 10 images
+//        imageView.animationImages = [self.img1, self.img2 , self.img3, self.img4, self.img5, self.img1, self.img2 , self.img3, self.img4, self.img5]
+//        imageView.animationDuration = 1
+        
+        // for 5 images
+        imageView.animationImages = [self.img1, self.img2 , self.img3, self.img4, self.img5]
+        imageView.animationDuration = 0.5
+        imageView.animationRepeatCount = 2
+        imageView.startAnimating()
         let random = arc4random_uniform(2)
         if random == 0 {
             imageView.image = UIImage(named: "head")
@@ -26,7 +47,7 @@ class ViewController: UIViewController {
             imageView.image = UIImage(named: "tail")
         }
     
-        UIView.transition(with: imageView, duration: 0.7, options: [.transitionFlipFromBottom], animations: nil, completion: nil)
+//        UIView.transition(with: imageView, duration: 0.7, options: [.transitionFlipFromBottom], animations: nil, completion: nil)
         
     }
     
